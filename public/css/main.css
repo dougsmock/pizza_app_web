@@ -1,0 +1,15 @@
+h3 {
+  font-family: "Bodoni 72 Smallcaps", "Times New Roman", "serif";
+  font-size: 48px;
+}
+
+h4 {
+  font-family: Avenir, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.readout {
+    width: 80px;
+    border: 0px white;
+    margin: 10px;
+}

@@ -1,0 +1,87 @@
+<html>
+   <head>
+        <title>Dig-Doug's pizza</title>
+        <!-- <script src="/js/pizza.js"></script> -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+   </head>
+   <style>
+   .content {
+       max-width: 410px;
+       margin: auto;
+   }
+   </style>
+   <body>
+
+     <div class="content">
+  <!-- Page content -->
+
+
+
+    <center>
+
+  <form method="post" action="/pizza">
+    <h3>Type</h3>
+    <%type.each do |typey|%>
+      <input type="radio" name="type[]" value="<%= typey %>"><%=typey%>
+      <%typey%>
+      <%typey.class%>
+    <%end%>
+
+    <br>
+
+    <h3>Size</h3>
+    <%size.each do |sizey|%>
+      <input type="radio" name="size[]" value="<%= sizey %>"><%=sizey%>
+      <output class="readout" name="crustread" value="">
+      <%sizey%>
+      <%sizey.class%>
+    <%end%>
+    <br>
+
+    <output class="readout" name="readout" value="">
+
+
+
+    <h3>Crust</h3>
+    <%crust.each do |crusty|%>
+      <input type="radio" name="crust[]" value="<%= crusty %>"><%=crusty%>
+      <output class="readout" name="crustread" value="">
+      <%crusty%>
+      <%crusty.class%>
+    <%end%>
+    <br>
+
+    <h3>Toppings</h3>
+    <h4>1.49 apiece<br>
+  (Superstar already has everything)</h4>
+    <%toppings.each do |toppingsy|%>
+      <input type="checkbox" name="toppings[]" value="<%= toppingsy %>"><%=toppingsy%>
+      <output class="readout" name="topsread" value="">
+      <%toppingsy%>
+      <%toppingsy.class%>
+    <%end%>
+
+
+    <br>
+    <br>
+    <br>
+    Special requests <input type="text">
+    <br>
+    <br>
+    <br>
+    <input type="submit" value="Another?">
+    <input type="submit" value="Checkout">
+    </form>
+    <br>
+    <br>
+
+
+
+    </center>
+
+
+
+  </div>
+
+   </body>
+   </html>
