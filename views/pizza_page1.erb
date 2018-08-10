@@ -1,79 +1,151 @@
 <html>
    <head>
         <title>Dig-Doug's pizza</title>
-        <!-- <script src="/js/pizza.js"></script> -->
+        <!-- <script src="/js/pizza1.js"></script> -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
    </head>
    <style>
-   .content {
-       max-width: 410px;
-       margin: auto;
+
+   h1 {
+     text-align: center;
+     color: #ffffff;
+     font-size: 72px;
+     font-family: Marker Felt, Helvetica, sans-serif;
    }
+
+   .content {
+       max-width: 400px;
+       margin: auto;
+       background-color: #b32d00;
+       border: 10px ridge;
+   }
+
+
+   body {
+     background-image: url(https://images.pexels.com/photos/9708/food-pizza-restaurant-eating.jpg?auto=compress&cs=tinysrgb&h=350);
+     background-color: #cccccc;
+
+   }
+
+   .front_buttons {
+     font-size: 30px;
+     margin: 30px 10px 0px 10px;
+     border: 0px;
+     background-color: #303029;
+     color: #ffffff;
+     font-family: Avenir, Helvetica, sans-serif;
+     font-weight: normal;
+     padding: 5px 10px;
+     text-align: center;
+     display: inline-block;
+   }
+
+
+
+
+
    </style>
+
+
    <body>
 
      <div class="content">
   <!-- Page content -->
 
-
-
-    <center>
+  <center>
 
   <form method="post" action="/pizza">
+    <div class="welcome">
+      <h1>Welcome to Dig-Doug's!</h1>
+    </div>
+
+  <div class="pietype">
     <h3>Type</h3>
-    <%type.each do |typey|%>
-      <input type="radio" name="type[]" value="<%= typey %>"><%=typey%>
-      <%typey%>
-      <%typey.class%>
-    <%end%>
+    <!-- <%type.each do |typey|%>
+    <input type="radio" name="type[]"  value="<%=typey%>"><%=typey.capitalize%><br>
+    <%end%> -->
 
-    <br>
+  <input type="radio" name="type" id="regular" value="regular" style="width:15px;height:15px;" checked>
+  			<label for="regular"> Regular (4.99, 8.99, 12.99) </label><br>
+	<input type="radio" name="type" id="superstar" value="superstar" style="width:15px;height:15px;">
+        <label for="superstar"> Superstar (8.99, 12.99, 16.99) </label><br><br>
 
+
+
+
+        <!-- <script>
+        var radios = document.getElementsByName('type');
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+              // do whatever you want with the checked radio
+              console.log(radios[i].value);
+              // only one radio can be logically checked, don't check the rest
+              break;
+          }
+        }
+
+        </script> -->
+
+
+
+
+
+  </div>
+
+
+
+  <div class="piesize">
     <h3>Size</h3>
-    <%size.each do |sizey|%>
-      <input type="radio" name="size[]" value="<%= sizey %>"><%=sizey%>
-      <output class="readout" name="crustread" value="">
-      <%sizey%>
-      <%sizey.class%>
-    <%end%>
-    <br>
+    <!-- <%crust.each do |sizey|%>
+    <input type="radio" name="size[]"  value="<%=sizey%>"><%=sizey.capitalize%><br>
+    <%end%> -->
 
-    <output class="readout" name="readout" value="">
+    <input type="radio" name="size" value="10_inch" checked="checked">10-inch</input>
+    <input type="radio" name="size" value="14_inch">14-inch</input>
+    <input type="radio" name="size" value="18_inch">18-inch</input>
+
+  </div>
 
 
-
+  <div class="piecrust">
     <h3>Crust</h3>
-    <%crust.each do |crusty|%>
-      <input type="radio" name="crust[]" value="<%= crusty %>"><%=crusty%>
-      <output class="readout" name="crustread" value="">
-      <%crusty%>
-      <%crusty.class%>
-    <%end%>
-    <br>
+    <!-- <%size.each do |crusty|%>
+    <input type="radio" name="crust[]"  value="<%=crusty%>"><%=crusty.capitalize%><br>
+    <%end%> -->
+
+    <input type="radio" name="crust" value="regular" checked="checked">Regular</input>
+    <input type="radio" name="crust" value="thin">Thin</input>
+    <input type="radio" name="crust" value="pan">Pan</input>
+    <input type="radio" name="crust" value="stuff">Stuff</input>
+
+
+
+  </div>
+
+
+
+  <div class="pietoppings">
 
     <h3>Toppings</h3>
-    <h4>1.49 apiece<br>
-  (Superstar already has everything)</h4>
-    <%toppings.each do |toppingsy|%>
-      <input type="checkbox" name="toppings[]" value="<%= toppingsy %>"><%=toppingsy%>
-      <output class="readout" name="topsread" value="">
+    <h4><strong>(1.49 apiece)</h4><br>
+      <%toppings1.each do |toppingsy|%>
+    <input type="checkbox" name="toppings1[]" id="pietoppings" value="<%= toppingsy %>"><%=toppingsy%>
       <%toppingsy%>
       <%toppingsy.class%>
     <%end%>
 
+  </div>
 
-    <br>
-    <br>
-    <br>
-    Special requests <input type="text">
-    <br>
-    <br>
-    <br>
-    <input type="submit" value="Another?">
-    <input type="submit" value="Checkout">
+
+    <h6>Special requests</h6>
+    <textarea rows="8" cols="50"></textarea>
+    <input type="submit" class="front_buttons" value="Another?">
+    <input type="submit" class="front_buttons" value="Checkout">
+
     </form>
-    <br>
-    <br>
+
+
 
 
 

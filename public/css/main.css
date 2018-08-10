@@ -1,15 +1,59 @@
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 72px;
+}
+
 h3 {
   font-family: "Bodoni 72 Smallcaps", "Times New Roman", "serif";
-  font-size: 48px;
+  font-size: 54px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  line-height: 0px;
 }
 
 h4 {
   font-family: Avenir, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  line-height: 0px;
+
 }
 
-.readout {
-    width: 80px;
-    border: 0px white;
-    margin: 10px;
+h5 {
+  font-family: Avenir, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  line-height: 0px;
+
+}
+
+h6 {
+  font-family: Avenir, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  line-height: 0px;
+}
+
+p {
+  font-size: 20px;
+  font-family: Avenir, Helvetica, sans-serif;
+  font-weight: light;
+
+}
+
+.radio_text {
+  font-size: 60px;
+
+}
+
+.categories {
+  font-family: Avenir, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 0px
 }

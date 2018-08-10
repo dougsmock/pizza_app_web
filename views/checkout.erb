@@ -1,30 +1,74 @@
 
 <html>
    <head>
-        <title>Dig-Doug's pizza</title>
-        <link rel="stylesheet" type="text/css" href="css/random.css">
+        <title>Checkout</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
    </head>
 
    <style>
    .content {
-       max-width: 410px;
+       max-width: 400px;
        margin: auto;
+       background-color: #a52900;
+       border: 10px ridge;
    }
-   </style>
-   
-   <body>
-    <center>
 
-    <form method="post" action="/pizza">
+   body {
+     background-image: url(https://images.pexels.com/photos/9708/food-pizza-restaurant-eating.jpg?auto=compress&cs=tinysrgb&h=350);
+     background-color: #cccccc;
+   }
+
+   h1 {
+     text-align: center;
+     color: #ffffff;
+     font-size: 72px;
+     font-family: Marker Felt, Helvetica, sans-serif
+   }
+
+   </style>
+
+    <body>
+    <div class="content">
+
+    <center>
+    <form method="post" action="/checkout">
+
+
     <h3>Subtotal</h3>
-    <h3>Delivery or carryout?</h3>
-    <h3>Delivery address</h3>
+    <h1><%= "$" + "#{subtotal.round(2)}" %></h1>
 
     <h6>Sales tax</h6>
-    <h2>Grand total</h2>
+    <h6><% sales_tax = subtotal * 0.06 %></h6>
+    <h6><%= sales_tax.round(2) %>
 
+    <h3>Total</h3>
+    <% grand_total = subtotal + sales_tax %>
+    <h1><%= "$" + "#{grand_total.round(2)}" %></h1>
 
+  <div class="deliv_carry">
+    <h6>Delivery or carryout?</h6>
+    <br>
+    <input type="radio" name="del_carry" id="delivery" value="delivery" style="width:15px;height:15px;" checked>
+    			<label for="regular"> Delivery </label><br>
+  	<input type="radio" name="del_carry" id="superstar" value="superstar" style="width:15px;height:15px;">
+          <label for="superstar"> Carryout </label><br><br>
+  </div>
+    <br>
+    <h4>Name</h4>
+    <h4><textarea rows="1" cols="50"></textarea></h4>
+    <h4>Address (if delivery)</h4>
+    <h4><textarea rows="1" cols="50"></textarea></h4>
+    <h4>Phone number</h4>
+    <br>
+    <input type="tel" id="phone" name="phone"
+           placeholder="123-456-7890"
+           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+           required>
+    <span class="validity"></span>
 
+    </form>
+
+  </div>
 
     </center>
 
