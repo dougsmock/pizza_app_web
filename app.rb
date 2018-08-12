@@ -48,10 +48,24 @@ end
 
 get '/checkout' do
   # session[:crust]
-  erb :checkout, locals:{type: session[:type], size: session[:size], crust: session[:crust], toppings: session[:toppings], subtotal: session[:subtotal], sales_tax: session[:sales_tax], grand_total: session[:grand_total]}
+  erb :checkout, locals:{type: session[:type], size: session[:size], crust: session[:crust], toppings1: session[:toppings1], subtotal: session[:subtotal], sales_tax: session[:sales_tax], grand_total: session[:grand_total]}
 end
 
+post '/checkout' do
+  puts "Hello World"
+  puts "#{params} is params in post '/lastpage' do"
+  session[:name] = params[:name]
+  session[:address] = params[:address]
+  session[:phone] = params[:phone]
+  session[:grand_total] = params[:grand_total]
+  session[:toppings1] = params[:toppings1]
+  session[:crust] = params[:crust]
+  session[:type] = params[:type]
+  session[:size] = params[:size]
+  p session
+  redirect '/lastpage'
+end
 
-
-# try to direct another to same page, carrying Subtotal
-# 3rd page for output.
+get '/lastpage' do
+  erb :lastpage, locals:{name: session[:name], address: session[:address], phone: session[:phone], type: session[:type], size: session[:size], crust: session[:crust], toppings1: session[:toppings1], grand_total: session[:grand_total]}
+end

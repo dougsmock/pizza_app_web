@@ -53,5 +53,12 @@ p pizzasubtotal
       p pizzasubtotal
     end
       pizzasubtotal
+  end
 
+  def self.round_down(x, n=2)
+    s = x.to_s
+    l = s.index('.') ? s.index('.') + 1 + n : s.length
+    s = s[0, l]
+    s =  s.index('.') ? s.length - (s.index('.') + 1) == 1 ? s << '0' : s : s << '.00'
+    s.to_f
   end
